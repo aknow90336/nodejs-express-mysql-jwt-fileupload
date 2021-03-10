@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize');
-const dotenv = require('dotenv');
+const Sequelize = require('sequelize')
+const dotenv = require('dotenv')
 
 const db = new Sequelize('AimazingTest', 'admin', 'Abc12345', {
    host: process.env.DB_CONNECT,
@@ -7,6 +7,6 @@ const db = new Sequelize('AimazingTest', 'admin', 'Abc12345', {
    dialect: 'mysql',
    operatorsAliases: false,
    freezeTableName: true
-});
+})
 
-module.exports = db;
+module.exports = db

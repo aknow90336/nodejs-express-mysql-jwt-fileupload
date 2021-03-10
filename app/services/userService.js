@@ -1,6 +1,6 @@
 const User = require('../src/models/userModel')
 
-var userService = function () { };
+var userService = function () { }
 
 userService.prototype.authenticate = function (account, password, callback) {
     User.findAll({
@@ -10,13 +10,12 @@ userService.prototype.authenticate = function (account, password, callback) {
         }
     }).then(users => {
         if (users.length == 1)
-            callback(false, users[0].dataValues);
+            callback(false, users[0].dataValues)
         else
-            callback(true, null);
-
+            callback(true, null)
     }).catch(err => {
-        console.log(err);
+        console.log(err)
     })
 }
 
-module.exports = new userService();
+module.exports = new userService()

@@ -1,31 +1,33 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const dotenv = require('dotenv');
-const cookieParser = require('cookie-parser');
+const express = require('express')
+const bodyParser = require("body-parser")
+const dotenv = require('dotenv')
+const cookieParser = require('cookie-parser')
 
 // init appsetting
-dotenv.config();
+dotenv.config()
 
 // init express
-const app = express();
+const app = express()
 
 // parse requests with type application/json
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
 // add cookieParser
-app.use(cookieParser(process.env.AUTH_SECRET));
+app.use(cookieParser(process.env.AUTH_SECRET))
 
 // route middlewares
-app.use('/api/user', require('./app/routes/auth'));
+app.use('/api/user', require('./app/routes/auth'))
+app.use('/api/invoice', require('./app/routes/invoice'))
+app.use('/api/tag', require('./app/routes/tag'))
 
-// dB connection Test
-const db = require('./app/src/database/connection');
+// db connection test
+const db = require('./app/src/database/connection')
 db.authenticate()
    .then(() => console.log('Database connected...'))
    .catch(err => console.log('Error: ' + err))
 
 // listen port
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 80
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
+  console.log('Server is running on port ${PORT}.')
+})

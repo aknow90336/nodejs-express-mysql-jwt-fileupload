@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../database/connection')
 
-module.exports = db.define("user",
+module.exports = db.define("tag",
     {
         id: {
             type: Sequelize.INTEGER(11),
@@ -9,11 +9,10 @@ module.exports = db.define("user",
             autoIncrement: true,
             primaryKey: true,
         },
-        account: Sequelize.STRING(32),
-        password: Sequelize.STRING(128),
+        name: Sequelize.STRING(32),
     },
     {
         timestamps: false,
-        tableName: 'user'
+        tableName: 'tag'
     }
 )
