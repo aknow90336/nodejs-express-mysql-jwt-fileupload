@@ -7,3 +7,6 @@ npm install
 ```
 nodemon server.js
 ```
+### DB ERD
+
+[<img src="https://i.imgur.com/dAd8H9N.png">]
