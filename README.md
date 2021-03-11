@@ -9,4 +9,4 @@ nodemon server.js
 ```
 ### DB ERD
 
-[<img src="https://i.imgur.com/dAd8H9N.png">]
+<img src="https://i.imgur.com/dAd8H9N.png">
